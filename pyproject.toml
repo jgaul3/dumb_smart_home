@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "dumb_smart_home"
+version = "0.1.0"
+description = ""
+authors = ["Jon Gaul <jgaul3@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.95.1"
+isort = "^5.12.0"
+black = "^23.3.0"
+uvicorn = "^0.22.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
