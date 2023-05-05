@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Peep this page</h1>
+<p>You know what it is:</p>
+<form method="post" action="{{ url_for('authenticate') }}">
+    <label for="access_key">Access Key:</label>
+    <input type="text" id="access_key" name="access_key"><br><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
