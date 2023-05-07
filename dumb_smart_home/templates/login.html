@@ -5,7 +5,7 @@
 <p>You know what it is:</p>
 <form method="post" action="{{ url_for('authenticate') }}">
     <label for="access_key">Access Key:</label>
-    <input type="text" id="access_key" name="access_key"><br><br>
+    <input type="password" id="access_key" name="access_key"><br><br>
     <input type="submit" value="Submit">
 </form>
 {% endblock %}

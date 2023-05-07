@@ -1,8 +1,75 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome in baby</h1>
+<h1>Welcome in, handsome</h1>
+<script type="text/javascript" src="static/control.js"></script>
 <button onclick="window.location.href='/logout';">
     Logout
 </button>
+<br>
+<br>
+<form id="ACForm" action="{{ url_for('handle_ac') }}">
+    <div id="powerToggleDiv" onchange="togglePower()">
+        <p>Power:</p>
+        <input type="radio" id="powerToggleOn" name="power" value="on" autocomplete="off">
+        <label for="powerToggleOn">On</label>
+        <input type="radio" id="powerToggleOff" name="power" value="off" checked autocomplete="off">
+        <label for="powerToggleOff">Off</label>
+    </div>
+    <div id="settingsDiv" style="display: none" onchange="toggleMode()">
+        <p>Mode:</p>
+        <input type="radio" id="modeToggleCool" name="mode" value="cool" checked>
+        <label for="modeToggleCool">Cool</label>
+        <input type="radio" id="modeToggleHeat" name="mode" value="heat">
+        <label for="modeToggleHeat">Heat</label>
+        <input type="radio" id="modeToggleFan" name="mode" value="fan">
+        <label for="modeToggleFan">Fan</label>
+        <input type="radio" id="modeToggleDry" name="mode" value="dry">
+        <label for="modeToggleDry">Dry</label>
+        <input type="radio" id="modeToggleAuto" name="mode" value="auto">
+        <label for="modeToggleAuto">Auto</label>
+
+        <div id="tempDiv">
+            <p> Temperature: </p>
+            <input type="number" id="temperature" name="temp" min="16" max="32" value="25">
+            <label for="temperature">°C</label>
+        </div>
+
+        <p>Fan Speed:</p>
+        <input type="radio" id="fanModeAuto" name="fan_mode" value="auto" checked>
+        <label for="fanModeAuto">Auto</label>
+        <input type="radio" id="fanMode5" name="fan_mode" value="5">
+        <label for="fanMode5">5</label>
+        <input type="radio" id="fanMode4" name="fan_mode" value="4">
+        <label for="fanMode4">4</label>
+        <input type="radio" id="fanMode3" name="fan_mode" value="3">
+        <label for="fanMode3">3</label>
+        <input type="radio" id="fanMode2" name="fan_mode" value="2">
+        <label for="fanMode2">2</label>
+        <input type="radio" id="fanMode1" name="fan_mode" value="1">
+        <label for="fanMode1">1</label>
+        <input type="radio" id="fanModeQuiet" name="fan_mode" value="quiet">
+        <label for="fanModeQuiet">Quiet</label>
+        <br>
+        <br>
+        <button id="otherButton" onclick="expandDiv('otherSettingsDiv')" type="button">Extras:</button>
+    </div>
+    <div id="otherSettingsDiv" style="display: none">
+        <p>Timer On After:</p>
+        <input type="number" id="timer_on" name="timer_on" value="0">
+        <label for="timer_on">minutes</label>
+        <p>Timer Off After:</p>
+        <input type="number" id="timer_off" name="timer_off" value="0">
+        <label for="timer_off">minutes</label>
+        <br>
+        <br>
+        <input type="checkbox" id="swingVertical" name="swing">
+        <label for="swingVertical">Swing</label>
+        <input type="checkbox" id="comfort" name="comfort">
+        <label for="comfort">Comfort???</label>
+    </div>
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+</form>
 {% endblock %}
